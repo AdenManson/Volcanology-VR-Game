@@ -73,8 +73,9 @@ public class DialogueManager : MonoBehaviour
                 {
                     optionButtons[i].interactable = true;
                     optionButtons[i].gameObject.SetActive(true);
-                    optionButtons[i].GetComponentInChildren<TMP_Text>().text = line.dialogueOptions[i].answerOption;
+                    
                     int index = i; // Capture the index variable
+                    optionButtons[i].GetComponentInChildren<TMP_Text>().text = line.dialogueOptions[index].answerOption;
                     optionButtons[i].onClick.AddListener(() => HandleOptionSelected(line.dialogueOptions[index].optionIndexJump));
                 }
 

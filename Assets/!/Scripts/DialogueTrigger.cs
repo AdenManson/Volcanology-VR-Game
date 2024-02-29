@@ -8,7 +8,7 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private List<dialogueString> dialogueStrings = new List<dialogueString>();
     [SerializeField] private Canvas GUICanvas;
 
-    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject parent;
 
     private bool hasSpoken = false;
 
@@ -16,7 +16,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         GUICanvas.enabled = false;
         //GUICanvas.enabled = true; // TODO: Make it so you can get repeating dialogue when convo has already happened
-        player.gameObject.GetComponent<DialogueManager>().DialogueStart(dialogueStrings);
+        parent.gameObject.GetComponent<DialogueManager>().DialogueStart(dialogueStrings);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,7 +25,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             Debug.Log("Collision enter");
             GUICanvas.enabled = true; // TODO: Make it so you can get repeating dialogue when convo has already happened
-            other.gameObject.GetComponent<DialogueManager>().DialogueStart(dialogueStrings);
+            parent.gameObject.GetComponent<DialogueManager>().DialogueStart(dialogueStrings);
             hasSpoken = true;
         }
     }
