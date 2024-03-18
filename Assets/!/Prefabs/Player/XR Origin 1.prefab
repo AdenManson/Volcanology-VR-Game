@@ -929,7 +929,7 @@ Transform:
   m_GameObject: {fileID: 2265955314935333387}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.1176, z: 0}
+  m_LocalPosition: {x: 0, y: 0.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1101,7 +1101,7 @@ GameObject:
   - component: {fileID: 4379968074715863263}
   - component: {fileID: 2433813620944954864}
   m_Layer: 0
-  m_Name: XR Origin
+  m_Name: XR Origin 1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1279,7 +1279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 6354375215955150300}
-  m_MoveSpeed: 1
+  m_MoveSpeed: 2.41
   m_EnableStrafe: 1
   m_EnableFly: 0
   m_UseGravity: 1
