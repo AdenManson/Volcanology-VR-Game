@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
+
 using TMPro;
-using UnityEngine.InputSystem.XR;
 using UnityEngine.XR;
 
 public class DialogueManager : MonoBehaviour
@@ -25,19 +24,20 @@ public class DialogueManager : MonoBehaviour
 
     private bool skipDialogue = false;
 
+
+
     private void Start()
     {
         dialogueParent.SetActive(false);
-
-
-        //FetchInputDevices();
-
     }
 
     public void DialogueStart(List<dialogueString> textToPrint)
     {
         dialogueParent.SetActive(true);
-        
+
+
+
+
         dialogueList = textToPrint;
         currentDialogueIndex = 0;
 
@@ -138,13 +138,10 @@ public class DialogueManager : MonoBehaviour
 
         if (!dialogueList[currentDialogueIndex].isQuestion)
         {
-            //yield return new WaitUntil(() => leftController.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out bool primaryVal) && primaryVal);
             yield return new WaitUntil(() => skipDialogue == true);
             skipDialogue = false;
         }
 
-        //if (dialogueList[currentDialogueIndex].isEnd)
-            //DialogueStop();
 
         currentDialogueIndex++;
     }
